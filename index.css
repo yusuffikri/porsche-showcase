@@ -22,7 +22,6 @@ html {
 }
 
 .navbar a {
-  float: right;
   margin-right: 10px;
   text-decoration: none;
   color: rgb(82, 82, 96);
@@ -46,7 +45,6 @@ html {
 .images__slider {
   height: 100%;
   width: 100%;
-  overflow: hidden;
   filter: brightness(0.5);
 }
 
