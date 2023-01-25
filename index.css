@@ -159,7 +159,7 @@ html {
 
 .card-img-top {
   max-width: 100%;
-}
+}i
 
 footer {
   background-color: #000;
@@ -168,3 +168,9 @@ footer {
   color: white;
   font-weight: 500;
 }
+
+@media screen and (max-width: 600px) {
+  .about__images {
+    display: none;
+  }
+ }
