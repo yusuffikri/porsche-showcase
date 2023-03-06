@@ -217,3 +217,29 @@ nav button {
 .navbar_logo h3 {
 font-size: 1.7rem;
 }
+
+.btn_navbar {
+    color: var(--color-secondary);
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .btn_navbar::before {
+    margin-left: auto;
+  }
+  
+  .btn_navbar::after, .btn_navbar::before {
+    content: '';
+    width: 0%;
+    height: 1px;
+    background: var(--color-light);
+    display: block;
+    transition: 0.5s;
+  }
+  
+  .btn_navbar:hover::after, .btn_navbar:hover::before {
+    width: 100%;
+  }
