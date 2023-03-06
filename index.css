@@ -82,7 +82,7 @@ img {
     width: 100%;
 }
 
-/* .btn {
+.button {
     display: inline-block;
     padding: 1rem 2.3rem;
     background-color: var(--color-secondary);
@@ -91,8 +91,9 @@ img {
     border: 1px transparent;
     border-radius: 15px;
     transition: var(--transition-button);
-} */
+}
 
+    /* BTN */
 .btn {
     display: inline-block;
     transition: all 0.2s ease-in;
@@ -145,6 +146,63 @@ img {
     border-color: var(--color-black);
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
   }
+  /* END OF BTN */
+
+  /* SECONDARY BUTTON */
+  .btn-secondary {
+    display: inline-block;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: var(--color-light);
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: var(--color-primary);
+    border: 2px solid var(--color-secondary);
+  }
+  
+  .btn-secondary:active {
+    color: var(--color-secondary);
+  }
+  
+  .btn-secondary:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  
+  .btn-secondary:hover {
+    color: var(--color-light);
+    border: 1px solid var(--color-primary);
+  }
+  
+  .btn-secondary:hover:before {
+    top: -35%;
+    background-color: var(--color-secondary);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+    border-color: var(--color-primary);
+  }
+  
+  .btn-secondary:hover:after {
+    top: -45%;
+    background-color: var(--color-secondary);
+    border-color: 2px solid var(--color-primary);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+
+  /* END OF SECONDARY BUTTON */
 
 .btn-primary {
     background-color: var(--color-black);
@@ -227,19 +285,29 @@ font-size: 1.7rem;
     font-family: 'Poppins', sans-serif;
   }
   
-  .btn_navbar::before {
+.btn_navbar::before {
     margin-left: auto;
-  }
+}
   
-  .btn_navbar::after, .btn_navbar::before {
+.btn_navbar::after, .btn_navbar::before {
     content: '';
     width: 0%;
     height: 1px;
     background: var(--color-light);
     display: block;
     transition: 0.5s;
-  }
+}
   
-  .btn_navbar:hover::after, .btn_navbar:hover::before {
+.btn_navbar:hover::after, .btn_navbar:hover::before {
     width: 100%;
-  }
+}
+
+.cta{
+    display: flex;
+    align-items: flex-start;
+}
+
+.logo {
+    width: 10%;
+    height: 10%;
+}
