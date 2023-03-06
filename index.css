@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600&display=swap');
 
+/* GENERAL STYLE */
+
 :root {
     --color-primary: rgb(255,0,114);
     --color-secondary: rgb(0, 0, 0);
     --color-white: #fff;
-    --color-black: #000f37;
+    --color-black: rgb(0, 0, 0);
     --color-light: #f4f4f4;
     --color-dark: #575757;
 
@@ -72,20 +74,77 @@ a {
     font-weight: 300;
 }
 
+a:hover {
+    color: var(--color-light);
+}
+
 img {
     width: 100%;
 }
 
-.btn {
+/* .btn {
     display: inline-block;
     padding: 1rem 2.3rem;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
     font-weight: 500;
     border: 1px transparent;
     border-radius: 15px;
     transition: var(--transition-button);
-}
+} */
+
+.btn {
+    display: inline-block;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: var(--color-primary);
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: var(--color-secondary);
+    border: 1px solid var(--color-primary);
+  }
+  
+  .btn:active {
+    color: #666;
+  }
+  
+  .btn:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  
+  .btn:hover {
+    color: #ffffff;
+    border: 1px solid var(--color-black);
+  }
+  
+  .btn:hover:before {
+    top: -35%;
+    background-color: var(--color-primary);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+    border-color: var(--color-black);
+  }
+  
+  .btn:hover:after {
+    top: -45%;
+    background-color: var(--color-primary);
+    border-color: var(--color-black);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
 
 .btn-primary {
     background-color: var(--color-black);
@@ -110,4 +169,51 @@ img {
 section {
     max-width: 100vw;
     padding-bottom: var(--bottom-section-padding);
+}
+
+/* NAVBAR STYLE */
+
+.navbar {
+    width: 100vw;
+    height: 6rem;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: var(--color-primary);
+}
+
+.navbar_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav button {
+    display: none;
+}
+
+.navbar_items {
+    display: flex;
+    gap: 3rem;
+
+}
+
+/* .navbar_logo {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+} */
+
+.navbar_signin-signup {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar_logo h3 {
+font-size: 1.7rem;
 }
