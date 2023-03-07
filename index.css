@@ -368,3 +368,12 @@ header p {
 .header_socials a:hover {
     color: var(--color-light);
 }
+
+.header_decoration-1 {
+    position: absolute;
+}
+.header_decoration-2 {
+    position: absolute;
+    right: 0;
+    margin-top: -24rem;
+}
